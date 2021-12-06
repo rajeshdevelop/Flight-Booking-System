@@ -1,0 +1,23 @@
+server:
+  port: 8002
+  
+zuul:
+    routes:
+     Airport-Service:
+      url: http://localhost:8083
+     Flight-Service:
+      url: http://localhost:8084
+     Passenger-Service:
+       url: http://localhost:8085
+     Booking-Service:
+       url: http://localhost:8086
+       
+management:
+    endpoints:
+      web:
+       exposure:
+         include: '*'
+    endpoint:
+       health:
+         show-details: ALWAYS
+     
